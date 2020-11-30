@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pets 4 Athens</title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+</head>
+<div id="everything">
+
+    <body>
+        {{>header}}
+        <div id="options">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="pets"><a href="/ourpets">Our Pets</a>
+                    <ul>
+                        <li><a href="/ourpets">Our Pets</a></li>
+                        <li><a href="/ourpets/apply">Pet Application</a></li>
+                        <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                    </ul>
+                </li>
+                <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                    <ul>
+                        <li><a href="/getinvolved">Get Involved</a></li>
+                        <li><a href="/resources">Other Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <br>
+            <h1 id="loginheader">Login</h1>
+            <form id="loginForm" method="POST">
+                <label>Email:</label>
+                <input type="text" name="email" placeholder="Email" id="loginemail" class="form-field" required>
+                <p class="loginrequired">*</p><br>
+                <br />
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Password" id="loginpassword" class="form-field" required>
+                <p class="loginrequired">*</p><br>
+                <br />
+                <p id="signuptext">Don't have an account? <a href="/signup">Sign up</a> here</p>
+                <p id="loginerror"></p>
+                <input type="submit" id="submitlogin">
+                
+            </form>
+        </main>
+        {{>footer}}
+        <script src="/js/login.js"></script>
+
+    </body>
+</div>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pets 4 Athens</title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <div id="options">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="pets"><a href="/ourpets">Our Pets</a>
+                    <ul>
+                        <li><a href="/ourpets">Our Pets</a></li>
+                        <li><a href="/ourpets/apply">Pet Application</a></li>
+                        <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                    </ul>
+                </li>
+                <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                    <ul>
+                        <li><a href="/getinvolved">Get Involved</a></li>
+                        <li><a href="/resources">Other Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p>{{message}}</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+    {{>footer}}
+</body>
+
+</html>

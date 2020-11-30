@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <title>Pets 4 Athens</title>
+       <link rel="shortcut icon" href="/img/favicon.ico">
+       <link rel="stylesheet" href="/css/home.css">
+       <link rel="stylesheet" href="/css/normalize.css">
+   </head>
+   <div id="everything">
+   <body>
+       {{>header}}
+	          <div id="options">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="pets"><a href="/ourpets">Our Pets</a>
+                    <ul>
+                        <li><a href="/ourpets" class="current">Our Pets</a></li>
+                        <li><a href="/ourpets/apply">Pet Application</a></li>
+                        <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                    </ul>
+                </li>
+                <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                    <ul>
+                        <li><a href="/getinvolved">Get Involved</a></li>
+                        <li><a href="/resources">Other Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+       <main>
+	   <h2 id="ourpetstitle">Our Pets</h2>
+           <table class="ourpets">
+			  <tr>
+				<td><img src="/img/jerry.jfif" height="250"></td>
+				<td class="petinfo">
+					Name: Jerry<br>
+					<br>
+					Age: 1<br>
+					<br>
+					Breed: Husky<br>
+					<br>
+					Type: Dog<br>
+					<br>
+					ID: 1<br>
+				</td>
+			  </tr>
+			  <tr>
+				<td><img src="/img/harold.jpg" height="250"></td>
+				<td class="petinfo">
+					Name: Harold<br>
+					<br>
+					Age: 2<br>
+					<br>
+					Breed: Beagle<br>
+					<br>
+					Type: Dog<br>
+					<br>
+					ID: 2<br>
+				</td>
+			  </tr>
+			  <tr>
+				<td><img src="/img/tony.jfif" height="250"></td>
+				<td class="petinfo">
+					Name: Tony<br>
+					<br>
+					Age: 4<br>
+					<br>
+					Breed: Siamese<br>
+					<br>
+					Type: Cat<br>
+					<br>
+					ID: 3<br>
+				</td>
+			  </tr>
+			</table>
+			<script src="/js/ourpets.js"></script>
+       </main>
+       {{>footer}}
+	</body>
+   </div>
+</html>

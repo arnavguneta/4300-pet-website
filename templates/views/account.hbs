@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pets 4 Athens</title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+</head>
+<div id="everything">
+
+    <body>
+        {{>header}}
+        <div id="options">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="pets"><a href="/ourpets">Our Pets</a>
+                    <ul>
+                        <li><a href="/ourpets">Our Pets</a></li>
+                        <li><a href="/ourpets/apply">Pet Application</a></li>
+                        <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                    </ul>
+                </li>
+                <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                    <ul>
+                        <li><a href="/getinvolved">Get Involved</a></li>
+                        <li><a href="/resources">Other Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <br>
+            <h1 id="loginheader">My Account</h1>
+            <form id="loginForm" method="POST">
+                <label>Display Name:</label>
+                <input type="text" name="name" placeholder="Display Name" id="accountname" class="form-field" readonly
+                    required>
+                <p class="loginrequired uname">*</p><br>
+                <br />
+
+                <label>Age:</label>
+                <input type="text" name="age" placeholder="Age" id="accountage" class="form-field" readonly required>
+                <p class="loginrequired uage">*</p><br>
+                <br />
+
+                <label>Email:</label>
+                <input type="text" name="email" placeholder="Email" id="accountemail" class="form-field" readonly
+                    required>
+                <p class="loginrequired uemail">*</p><br>
+                <br />
+
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Password" id="accountpass" class="form-field"
+                    readonly required>
+                <p class="loginrequired upassword">*</p><br>
+                <br />
+
+                <p id="loginerror"></p>
+                <input type="submit" id="editacc" value="Edit">
+            </form>
+            <button onclick="manualLogOut()" id="logout">Logout</button>
+            <br />
+            <form method="post" id="application">
+                <h1 id="loginheader">Pet Application</h1>
+
+                <label>Your Information:</label>
+                <input type="text" name="fname" placeholder="First Name" id="pfname" required readonly>
+                <input type="text" name="lname" placeholder="Last Name" id="plname" required readonly><br>
+                <label>Pet IDs:</label>
+                <input type="text" name="petname" id="pids" readonly required>
+                <br>
+                <label>Email Address:</label>
+                <input type="text" name="email" placeholder="ex:myname@example.com" id="pemail" readonly required><br>
+                <label>Phone Number:</label>
+                <input type="text" name="areaCode" placeholder="Area Code" id="parea" readonly required>
+                <input type="text" name="phoneNum" placeholder="Phone Number" id="pnumber" readonly required><br>
+                <label>Address:</label>
+                <input type="text" class="address" name="street" placeholder="Street Address" id="paddress1" readonly
+                    required>
+                <input type="text" class="address" name="street2" placeholder="Street Address Line 2" id="paddress2"
+                    readonly>
+                <input type="text" class="address" name="city" placeholder="City" id="pcity" required readonly>
+                <input type="text" class="address" name="state" placeholder="State / Province" id="pstate" required
+                    readonly>
+                <input type="text" class="address" name="zip" placeholder="Postal / Zip Code" id="pzip" required
+                    readonly><br>
+                <label>Why do you want to Adopt?:</label>
+                <textarea name="why" id="why" rows="5" cols="10" readonly required></textarea><br><br>
+                <label>Approved: </label>
+                <p id="papproved">No</p><br>
+                <input type="submit" value="Edit" id="submitApp">
+                <p id="perror"></p>
+
+            </form>
+            <form id="admin">
+                <br>
+                <h1 id="loginheader">Admin Console</h1>
+                <button id="cpets"><a class="admin-link" href="/admin/pets/add">Add Pets</a></button>
+                <button id="mpets"><a class="admin-link" href="/admin/pets">Manage Pets</a></button>
+                <button id="musers"><a class="admin-link" href="/admin/petapps">Manage Pet Applications</a></button>
+
+                {{!-- <input type="submit" value="Manage Pets" id="mpets">
+                <br>
+                <input type="submit" value="Manager Users" id="musers">
+                <br> --}}
+            </form>
+        </main>
+        {{>footer}}
+        <script src="/js/account.js"></script>
+
+    </body>
+</div>
+
+</html>

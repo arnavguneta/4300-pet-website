@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Pets 4 Athens</title>
+      <link rel="shortcut icon" href="/img/favicon.ico">
+      <link rel="stylesheet" href="/css/home.css">
+      <link rel="stylesheet" href="/css/normalize.css">
+  </head>
+  <div id="everything">
+  <body>
+      {{>header}}
+      <div id="options">
+           <ul>
+               <li><a href="/">Home</a></li>
+               <li><a href="/about">About</a></li>
+               <li><a href="/contact">Contact Us</a></li>
+               <li id="pets"><a href="/ourpets">Our Pets</a>
+                   <ul>
+                       <li><a href="/ourpets">Our Pets</a></li>
+                       <li><a href="/ourpets/apply">Pet Application</a></li>
+                       <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                   </ul>
+               </li>
+               <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                   <ul>
+                       <li><a href="/getinvolved" class="current">Get Involved</a></li>
+                       <li><a href="/resources">Other Resources</a></li>
+                   </ul>
+               </li>
+           </ul>
+       </div>
+      <main>
+      <div id="resources">
+          <h2>Check Out These Other Great Resources!</h2>
+          <a href="https://athenshumanesociety.org/"><img src="/img/humane.jpg" height="200" width="200" class="logoLink"></a>
+          <a href="https://athensanimalrescue.com/"><img src="/img/rescue.png" height="200" width="200" class="logoLink"></a><br>
+          <a href="https://athenshumanesociety.org/" class="resource">Athens Humane Society</a>
+          <a href="https://athensanimalrescue.com/" class="resource">Athens Animal Rescue</a> <br>
+          <a href="http://athenscaninerescue.com/"><img src="/img/canine.jfif" height="200" width="200" class="logoLink"></a><br>
+          <a href="http://athenscaninerescue.com/" class="resource">Athens Canine Rescue</a><br>
+           <a href="https://athenspets.net/"><img src="/img/athenspets.png" class="logoLink"></a><br>
+          <a href="https://athenspets.net/" class="resource">Athens Pets</a>
+       </div>
+      </main>
+      {{>footer}}
+  </body>
+  </div>
+</html>

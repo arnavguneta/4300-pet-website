@@ -1,0 +1,436 @@
+header img {
+  float: left;
+  padding-right: 1em;
+  margin: 1em 0 0 3em;
+}
+
+body {
+  clear: both;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 120%;
+  border: 0px solid #6c7c59;
+  width: 75%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#everything {
+  box-shadow: 0px 0px 20px 7px black;
+}
+
+#options {
+  clear: both;
+  margin-bottom: 2em;
+}
+#options ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0em;
+  padding: 0em;
+  width: 105.27%;
+  position: relative;
+}
+#options ul li {
+  float: left;
+  width: 19%;
+  margin-bottom: 0.5em;
+  background-color: #6c7c59;
+}
+#options ul li:hover > ul {
+  display: block;
+}
+#options ul ul {
+  display: none;
+  font-size: 10%;
+  position: absolute;
+  top: 100%;
+}
+#options ul ul li {
+  float: none;
+}
+#options ul li a.current {
+  color: black;
+}
+#options ul li a.last {
+  border-right: none;
+}
+#options ul li a {
+  display: block;
+  padding: 0.5em 1em 0.5em 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+#involvement ul li {
+  margin: 0em;
+  width: 18.05%;
+  height: 100%;
+  font-size: 19px;
+}
+#pets ul li {
+  text-align: center;
+  margin: 0em;
+  width: 18.25%;
+  height: 100%;
+  font-size: 19px;
+}
+#involvement ul li:hover {
+  background-color: #6c7c59;
+}
+#pets ul li:hover {
+  background-color: #6c7c59;
+}
+
+header {
+  border: 3px solid white;
+  background-image: linear-gradient(white, white);
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+
+header h1 {
+  color: #6c7c59;
+  font-size: 250%;
+  text-shadow: 4px 4px 4px black;
+  font-style: italic;
+  text-align: center;
+}
+
+header h2 {
+  text-align: center;
+}
+header h4 {
+  text-align: right;
+  margin: 0em;
+  padding-right: 1em;
+}
+.logsignup {
+  color: black;
+  text-decoration: none;
+}
+
+.logsignup:hover {
+  text-decoration-color: black;
+  text-decoration: underline;
+}
+
+#title {
+  width: 100%;
+}
+#ourpets {
+  width: 50%;
+}
+
+main {
+  clear: left;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+main h1.top {
+  font-size: 160%;
+}
+main h1.tabs {
+  font-size: 140%;
+}
+main {
+  line-height: 15px;
+  font-size: 80%;
+}
+main div {
+  width: 75%;
+  margin-left: 9em;
+}
+
+footer {
+  clear: both;
+  color: white;
+  text-align: center;
+  font-size: 85%;
+  border: 3px solid #6c7c59;
+  background-color: #6c7c59;
+}
+
+#about {
+  width: 50%;
+  float: left;
+}
+
+#adoptLogo {
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+#loginheader {
+  clear: left;
+  text-align: left;
+  margin-bottom: 0.5em;
+  padding: 10px;
+  margin-left: 2em;
+}
+
+#loginForm label {
+  float: left;
+  width: 250px;
+  text-align: right;
+  margin-bottom: 0.5em;
+  padding: 10px;
+}
+
+.form-field {
+  margin-bottom: 0.5em;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  float: left;
+  width: 200px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+#submitlogin,
+#editacc,
+#submitApp,
+#mpets,
+#musers, #cpets {
+  clear: both;
+  float: left;
+  font-size: 110%;
+  border: 1px solid black;
+  margin-bottom: 1em;
+  margin-left: 275px;
+  width: 200px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+#submitlogin:hover,
+#editacc:hover,
+#submitApp:hover,
+#mpets:hover,
+#musers:hover, #getAddr:hover, #cpets:hover {
+  background-color: rgb(179, 176, 176);
+}
+
+#loginerror,
+#perror {
+  clear: both;
+  color: red;
+  margin-left: 275px;
+  text-align: left;
+}
+
+#signuptext {
+  clear: both;
+  margin-left: 275px;
+  text-align: left;
+}
+
+#application label {
+  float: left;
+  clear: left;
+  width: 250px;
+  text-align: right;
+  margin-bottom: 0.5em;
+  padding: 10px;
+}
+
+#pfname,
+#plname,
+#pids,
+#pemail,
+#parea,
+#pnumber,
+#paddress1,
+#paddress2,
+#pcity,
+#pstate,
+#pzip,
+#why, .field {
+  margin-bottom: 0.5em;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  float: left;
+  width: 200px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+#application #areaCode {
+  width: 100px;
+}
+
+#application #why {
+  width: 400px;
+}
+/* #application #submitApp {
+  font-size: 110%;
+  border: 1px solid black;
+  margin-bottom: 2em;
+} */
+/* #application #submitApp:hover {
+  background: #3071a9;
+} */
+
+.logoLink {
+  padding: 20px;
+}
+
+.resource {
+  padding: 30px;
+  text-decoration: none;
+  color: blue;
+}
+
+#resources {
+  margin-bottom: 2em;
+}
+#resources h2 {
+  margin-top: 3em;
+  font-size: 200%;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.loginrequired {
+  margin: 0;
+  text-align: left;
+  color: red;
+}
+
+#logoutheader,
+#accountheader {
+  margin-bottom: 1em;
+}
+
+.logoutbutton {
+  font-size: 110%;
+  border: 1px solid black;
+  margin-bottom: 2em;
+  width: 100px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+#logoutyes,
+#loginyes {
+  background-color: #c4ceb7;
+}
+
+#logoutno,
+#loginno,
+#logout {
+  background-color: rgb(224, 156, 156);
+  margin-left: 25px;
+}
+
+#logoutyes:hover,
+#loginyes:hover {
+  background-color: #98b671;
+  border: 2px solid #98b671;
+}
+
+#logoutno:hover,
+#loginno:hover,
+#logout:hover {
+  background-color: rgb(226, 126, 126);
+  border: 2px solid rgb(226, 126, 126);
+}
+
+#logout {
+  clear: both;
+
+  font-size: 110%;
+  border: 1px solid black;
+  margin-bottom: 2em;
+  width: 200px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  margin-left: -35em;
+}
+
+.ourpets {
+  margin: auto;
+}
+
+.ourpets td {
+  padding: 20px 125px 20px;
+}
+
+.petinfo {
+  text-align: left;
+  font-size: 150%;
+}
+
+#ourpetstitle {
+  margin-top: 2em;
+  font-size: 300%;
+}
+
+#papproved {
+  float: left;
+  margin-top: 10px;
+  color: red;
+}
+#admin {
+  float: left;
+}
+
+#apps, #slctpets {
+  float: left;
+  padding: 7px;
+  margin-top: 2em;
+}
+
+#approval {
+  float: left;
+  padding: 7px;
+  margin-top: 5px;
+}
+
+#loadapp {
+  float: left;
+  padding: 7px;
+  margin: 1em;
+  margin-top: 2em;
+  width: 75px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+.admin-link {
+  text-decoration: none;
+  color: black;
+}
+
+
+#map { 
+	margin:auto;
+	margin-top:150px;
+	width: 600px; 
+	height: 400px; 
+	background-color: grey; 
+	margin-bottom:20px;
+  } 
+  
+  #zip {
+	margin-bottom:3em;
+  }
+  
+  #zip a {
+	text-decoration:none;
+	color:black;
+	padding:7px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  padding-top:-10px;
+  border: 2px solid rgb(179, 176, 176);
+
+  }
+  
+  #zip input {
+	margin-top:-.25em;
+	height:25px;
+  }

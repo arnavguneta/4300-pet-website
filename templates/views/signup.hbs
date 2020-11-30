@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pets 4 Athens</title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+</head>
+<div id="everything">
+
+    <body>
+        {{>header}}
+        <div id="options">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="pets"><a href="/ourpets">Our Pets</a>
+                    <ul>
+                        <li><a href="/ourpets">Our Pets</a></li>
+                        <li><a href="/ourpets/apply">Pet Application</a></li>
+                        <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                    </ul>
+                </li>
+                <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                    <ul>
+                        <li><a href="/getinvolved">Get Involved</a></li>
+                        <li><a href="/resources">Other Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <br>
+            <h1 id="loginheader">Sign Up</h1>
+            <form id="loginForm">
+                <label>Display Name:</label>
+                <input type="text" name="name" placeholder="Display Name" id="signupname" class="form-field" required>
+                <p class="loginrequired sname">*</p><br>
+                <br />
+
+                <label>Age:</label>
+                <input type="text" name="age" placeholder="Age" id="signupage" class="form-field" required>
+                <p class="loginrequired sage">*</p><br>
+                <br />
+
+                <label>Email:</label>
+                <input type="text" name="email" placeholder="Email" id="signupemail" class="form-field" required>
+                <p class="loginrequired semail">*</p><br>
+                <br />
+
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Password" id="signuppassword" class="form-field" required>
+                <p class="loginrequired spassword">*</p><br>
+                <br />
+
+
+                <p id="loginerror"></p>
+                <input type="submit" id="submitlogin">
+                
+            </form>
+        </main>
+        {{>footer}}
+        <script src="/js/signup.js"></script>
+
+    </body>
+</div>
+
+</html>

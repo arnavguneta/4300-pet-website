@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pets 4 Athens</title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+</head>
+<div id="everything">
+
+    <body>
+        {{>header}}
+        <div id="options">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="pets"><a href="/ourpets">Our Pets</a>
+                    <ul>
+                        <li><a href="/ourpets">Our Pets</a></li>
+                        <li><a href="/ourpets/apply">Pet Application</a></li>
+                        <li><a href="/centers" class="current">Find a Pet Adoption Center Near You</a></li>
+                    </ul>
+                </li>
+                <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                    <ul>
+                        <li><a href="/getinvolved">Get Involved</a></li>
+                        <li><a href="/resources">Other Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="map">
+        </div>
+        <form id="zip">
+            <label>Enter ZipCode:</label>
+            <input type="text" id="zipc">
+            <a href="#" onclick="changeMap()" id="getAddr">Get Address</a>
+        </form>
+        <script>
+            var map;
+            var service;
+            var infowindow;
+
+            function initMap() {
+                athens = new google.maps.LatLng(33.9519, -83.3576);
+                infowindow = new google.maps.InfoWindow();
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: athens,
+                    zoom: 10,
+                });
+                request = {
+                    query: "Pet Rescue",
+                    fields: ["name", "geometry"],
+                };
+                service = new google.maps.places.PlacesService(map);
+                service.findPlaceFromQuery(request, (results, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        for (let i = 0; i < results.length; i++) {
+                            createMarker(results[i]);
+                        }
+                        map.setCenter(results[0].geometry.location);
+                    }
+                });
+            }
+
+            function createMarker(place) {
+                marker = new google.maps.Marker({
+                    map,
+                    position: place.geometry.location,
+                });
+                google.maps.event.addListener(marker, "click", () => {
+                    infowindow.setContent(place.name);
+                    infowindow.open(map);
+                });
+            }
+
+            function changeMap() {
+                zip = document.getElementById("zipc").value;
+                infowindow = new google.maps.InfoWindow();
+                request = {
+                    query: "Pet Rescue " + zip,
+                    fields: ["name", "geometry"]
+                };
+                service = new google.maps.places.PlacesService(map);
+                service.findPlaceFromQuery(request, (results, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        map = new google.maps.Map(document.getElementById("map"), {
+                            center: results[0].geometry.location,
+                            zoom: 15,
+                        });
+                        for (let i = 0; i < results.length; i++) {
+                            createMarker(results[i]);
+                            console.log(results[i]);
+                        }
+
+                    }
+                });
+            }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoEmjUBq7VSluGdxWwtUQKxj-l7XhSJEc&callback=initMap&libraries=places">
+            </script>
+        <main>
+
+        </main>
+        {{>footer}}
+    </body>
+</div>
+
+</html>

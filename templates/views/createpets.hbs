@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pets 4 Athens</title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+</head>
+<div id="everything">
+
+    <body>
+        {{>header}}
+        <div id="options">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li id="pets"><a href="/ourpets">Our Pets</a>
+                    <ul>
+                        <li><a href="/ourpets">Our Pets</a></li>
+                        <li><a href="/ourpets/apply">Pet Application</a></li>
+                        <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                    </ul>
+                </li>
+                <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                    <ul>
+                        <li><a href="/getinvolved">Get Involved</a></li>
+                        <li><a href="/resources">Other Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <br>
+            <form id="application">
+                <h1 id="loginheader">Add Pet</h1>
+                <label>Name:</label>
+                <input class="field" type="text" name="name" placeholder="" id="cname" required >
+                <label>Age:</label>
+                <input class="field" type="text" name="age" id="cage"  required>
+                <br>
+                <label>Breed:</label>
+                <input class="field" type="text" name="breed" placeholder="huskey/pug.." id="cbreed"  required><br>
+                <label>Type:</label>
+                <input class="field" type="text" name="type" placeholder="dog/cat.." id="ctype" 
+                    required><br>
+                <label>Image Link:</label>
+                <input class="field" type="text" name="image" placeholder="src" id="cimage" 
+                    required><br>
+                    <label>Adopted:</label>
+                <input class="field" type="text" name="adopted" placeholder="true/false" id="cadopted" 
+                    required>
+                <br>
+                <p id="perror"></p>
+
+                <input type="submit" value="Submit" id="submitApp">
+            </form>
+
+            <br>
+
+        </main>
+        {{>footer}}
+        <script src="/js/cpets.js"></script>
+
+    </body>
+</div>
+
+</html>

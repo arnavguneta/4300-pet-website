@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <title>Pets 4 Athens</title>
+       <link rel="shortcut icon" href="/img/favicon.ico">
+       <link rel="stylesheet" href="/css/home.css">
+       <link rel="stylesheet" href="/css/normalize.css">
+   </head>
+   <div id="everything">
+   <body>
+       {{>header}}
+       <div id="options">
+           <ul>
+               <li><a class="current" href="/">Home</a></li>
+               <li><a href="/about">About</a></li>
+               <li><a href="/contact">Contact Us</a></li>
+               <li id="pets"><a href="/ourpets">Our Pets</a>
+                   <ul>
+                       <li><a href="/ourpets">Our Pets</a></li>
+                       <li><a href="/ourpets/apply">Pet Application</a></li>
+                       <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                   </ul>
+               </li>
+               <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                   <ul>
+                       <li><a href="/getinvolved">Get Involved</a></li>
+                       <li><a href="/resources">Other Resources</a></li>
+                   </ul>
+               </li>
+           </ul>
+       </div>
+       <main>
+           <img src="/img/title.jpg" id="title" alt="Title Image">
+           <h1>ARE YOU LOOKING FOR THE PERFECT COMPANION?</h1>
+           <h2>Check out our available pets!</h2>
+           <a href="/ourpets"><img src="/img/ourpets.png" id="ourpets" alt="Our Pets Image"></a>
+           <div>
+               <p>Your new best friend is waiting for you! Click on the image above to browse through all of the dogs and cats currently available for adoption. There are a variety of different breeds available for your choosing. We do our very best to make the best fit between pet and pet owner and the process to do so is very simple. Pets 4 Athens is a non-profit organization of foster homes in the local area. This means that we trust an enormous and reliable network of foster homes to take care of our pets until they are ready for adoption and find the perfect, permanent home. </p>
+               <p>As French poet and novelist Anatole France once said:</p>
+               <p><blockquote>Until one has loved an animal, a part of one's soul remains unawakened.</blockquote></p>
+           </div>
+       </main>
+       {{>footer}}
+   </body>
+   </div>
+</html>

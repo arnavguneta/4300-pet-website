@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <title>Pets 4 Athens</title>
+       <link rel="shortcut icon" href="/img/favicon.ico">
+       <link rel="stylesheet" href="/css/home.css">
+       <link rel="stylesheet" href="/css/normalize.css">
+   </head>
+   <div id="everything">
+   <body>
+       {{>header}}
+       <div id="options">
+           <ul>
+               <li><a href="/">Home</a></li>
+               <li><a href="/about">About</a></li>
+               <li><a class="current" href="/contact">Contact Us</a></li>
+               <li id="pets"><a href="/ourpets">Our Pets</a>
+                   <ul>
+                       <li><a href="/ourpets">Our Pets</a></li>
+                       <li><a href="/ourpets/apply">Pet Application</a></li>
+                       <li><a href="/centers">Find a Pet Adoption Center Near You</a></li>
+                   </ul>
+               </li>
+               <li class="last" id="involvement"><a href="/getinvolved">Get Involved</a>
+                   <ul>
+                       <li><a href="/getinvolved">Get Involved</a></li>
+                       <li><a href="/resources">Other Resources</a></li>
+                   </ul>
+               </li>
+           </ul>
+       </div>
+       <main>
+           <img src="/img/title.jpg" id="about" alt="Title Image">
+           <br>
+           <h1>Contact Us</h1>
+           <p>Pets 4 Athens</p>
+           <p>P.O. Box 4524</p>
+           <p>Athens, GA 30604</p>
+           <p>adoption@pets4athens.com</p>
+           <p>(706)555-5555</p><br>
+       </main>
+       {{>footer}}
+   </body>
+   </div>
+</html>
