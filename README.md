@@ -6,8 +6,8 @@
 A website created for my web design class that was created using nodejs and MongoDB. Features an API for easy database access, session management, different types of user accounts with varying level of accessm and more.
 
 #### File details
-public - contains css and front end JS files
-src - contains code ran on the backend
+public - contains css and front end JS files\n
+src - contains code ran on the backend\n
 templates - contains the views served by the backend to the user in form of .hbs files
 
 #### Usage
