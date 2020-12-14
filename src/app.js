@@ -341,7 +341,6 @@ app.patch('/api/pets/:id', auth, async (req, res) => {
 
 app.delete('/api/pets/:id', auth, async (req, res) => {
     if (!req.user.isAdmin) return res.status(400).send('Not sufficient permissions')
-
     const _id = req.params.id
 
     try {
