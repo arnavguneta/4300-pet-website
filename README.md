@@ -29,25 +29,25 @@ After downloading the code from the repo, navigate to the main directory in a co
 
 #### All endpoints
 ##### Users
-POST /api/users/signup - create user account  
-POST /api/users/login - login and receive auth token  
-POST /api/users/logout - logs out current session (auth)  
-POST /api/users/logallout - logs out all sessions (auth)  
-POST /api/users/me - get account details (auth)  
-POST /api/users/:id - get specified id's account details (admin auth)  
-PATCH /api/users/:id - update specified id's account details (auth, admin auth for editing others accounts)  
-DELETE /api/users/:id - delete specified id's account (auth, admin auth for deleting others accounts)  
+POST `/api/users/signup` - create user account  
+POST `/api/users/login` - login and receive auth token  
+POST `/api/users/logout` - logs out current session (auth)  
+POST `/api/users/logallout` - logs out all sessions (auth)  
+POST `/api/users/me` - get account details (auth)  
+POST `/api/users/:id` - get specified id's account details (admin auth)  
+PATCH `/api/users/:id` - update specified id's account details (auth, admin auth for editing others accounts)  
+DELETE `/api/users/:id` - delete specified id's account (auth, admin auth for deleting others accounts)  
 ##### Pet Application
-POST /api/petapps/create - create a pet application (auth)  
-POST /api/petapps/:id - get specified id's pet application details (auth)  
-GET /api/petapps/all - get all pet application details (admin auth)  
-PATCH /api/petapps/:id - update specified id's pet application details (auth, admin auth for editing others pet apps)  
-DELETE /api/petapps/:id - delete specified id's pet application (auth, admin auth for deleting others pet apps)  
+POST `/api/petapps/create` - create a pet application (auth)  
+POST `/api/petapps/:id` - get specified id's pet application details (auth)  
+GET `/api/petapps/all` - get all pet application details (admin auth)  
+PATCH `/api/petapps/:id` - update specified id's pet application details (auth, admin auth for editing others pet apps)  
+DELETE `/api/petapps/:id` - delete specified id's pet application (auth, admin auth for deleting others pet apps)  
 ##### Pets
-POST /api/pets/create - create a pet (admin auth)  
-POST /api/pets/:id - get a specific pet's details (auth)  
-GET /api/pets/all - get all pets details  
-PATCH /api/pets/:id - update a specific pets details (admin auth)  
-DELETE /api/pets/:id - delete specific pet (admin auth)  
+POST `/api/pets/create` - create a pet (admin auth)  
+POST `/api/pets/:id` - get a specific pet's details (auth)  
+GET `/api/pets/all` - get all pets details  
+PATCH `/api/pets/:id` - update a specific pets details (admin auth)  
+DELETE `/api/pets/:id` - delete specific pet (admin auth)  
 
 Contact me (arnavguneta@gmail.com) if you need any help with setup.
