@@ -13,13 +13,13 @@ templates - contains the views served by the backend to the user in form of .hbs
 #### Usage
 After downloading the code from the repo, navigate to the main directory in a command prompt  
 
-1. Ensure you have Node.js and npm installed by running `node -v` and `npm -v`. You can install them using these directions ![here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-2. Next, you want to set up MongoDB. Follow these directions ![here](https://docs.mongodb.com/manual/installation/#tutorial-installation) to get setup.
+1. Ensure you have Node.js and npm installed by running `node -v` and `npm -v`. You can install them using these directions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+2. Next, you want to set up MongoDB. Follow these directions [here](https://docs.mongodb.com/manual/installation/#tutorial-installation) to get setup.
 3. After installation of MongoDB, follow the same link to your respective version (Windows, macOS, Linux) installation page and find the Run section. Follow the instructions to get your database up and running.
 4. Navigate to your project directory if you haven't already and type: `npm install`. This will install all package dependencies for the project.
 5. After installing all package dependencies and starting the database, type: `npm run start` to run the backend server.
 6. Next you'll need a way to connect to the database to perform CRUD operations. You need to do this so you can manually create an admin account later in the setup process.
-7. Install ![MongoDB Compass](https://www.mongodb.com/products/compass) to edit data of your database. After installing MongoDB Compass, connect to your database through Compass.
+7. Install [MongoDB Compass](https://www.mongodb.com/products/compass) to edit data of your database. After installing MongoDB Compass, connect to your database through Compass.
 8. Using Postman, we can send requests to our custom API. To setup an admin account, you can send a POST request to `http://localhost:3000/api/users/signup`. POST request body (JSON) for an admin account needs to include: name (string), email (valid string), age (int), password (string), isAdmin (boolean).
 9. After sending the request, refresh your database. A database named `pet-website-api` should've been created with a collection named `users` with 1 document.
 10. Navigate to localhost:3000 in your web browser. You should now be able to log in through the admin account. Feel free to create more accounts to see how they look in the database throught Compass.
