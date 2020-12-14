@@ -56,58 +56,56 @@ if (!petapp_token) {
                             if (r.status == 404 || r.status == 500) {
                                 petapp.error.style.color = 'red'
                                 petapp.error.innerHTML = `Pet with ID: ${pid} doesn't exist`
-                                return
                             } else {
                                 r.json().then(d => {
                                     if (d.adopted) {
                                         petapp.error.style.color = 'red'
                                         petapp.error.innerHTML = `Pet with ID: ${pid} has already been adopted`
-                                        return
                                     } else {
                                         update_pet = true
+                                        options = {
+                                            method: 'POST',
+                                            headers: {
+                                                'Authorization': `Bearer ${petapp_token}`,
+                                                'Content-Type': 'application/json'
+                                            },
+                                            body: JSON.stringify(formData)
+                                        }
+                                        fetch(`/api/petapps/create`, options).then(response2 => {
+                                            if (response2.status != 400) {
+                                                // add petapp id to user
+                                                response2.json().then(rdata => {
+                                                    formData = {
+                                                        petapp: rdata.petapp._id
+                                                    }
+                                                    options = {
+                                                        method: 'PATCH',
+                                                        headers: {
+                                                            'Authorization': `Bearer ${petapp_token}`,
+                                                            'Content-Type': 'application/json'
+                                                        },
+                                                        body: JSON.stringify(formData)
+                                                    }
+                                                    fetch(`/api/users/${data._id}`, options).then(response3 => {
+                                                        response3.json().then(udata => {
+                                                            console.log(udata)
+                                                        })
+                                                        petapp.error.style.color = "green"
+                                                        petapp.error.innerHTML = "Form submitted!"
+                                                    })
+                                                }) 
+                                            } else {
+                                                
+                                                petapp.error.style.color = "red"
+                                                petapp.error.innerHTML = "Either you have errors in your form or you have already submitted a form!"
+                                            }
+                                        })
                                     }
                                 })
                             }
                         })
                     })
 
-                    options = {
-                        method: 'POST',
-                        headers: {
-                            'Authorization': `Bearer ${petapp_token}`,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(formData)
-                    }
-                    fetch(`/api/petapps/create`, options).then(response2 => {
-                        if (response2.status != 400) {
-                            // add petapp id to user
-                            response2.json().then(rdata => {
-                                formData = {
-                                    petapp: rdata.petapp._id
-                                }
-                                options = {
-                                    method: 'PATCH',
-                                    headers: {
-                                        'Authorization': `Bearer ${petapp_token}`,
-                                        'Content-Type': 'application/json'
-                                    },
-                                    body: JSON.stringify(formData)
-                                }
-                                fetch(`/api/users/${data._id}`, options).then(response3 => {
-                                    response3.json().then(udata => {
-                                        console.log(udata)
-                                    })
-                                    petapp.error.style.color = "green"
-                                    petapp.error.innerHTML = "Form submitted!"
-                                })
-                            }) 
-                        } else {
-                            
-                            petapp.error.style.color = "red"
-                            petapp.error.innerHTML = "Either you have errors in your form or you have already submitted a form!"
-                        }
-                    })
                 })
             } else {
                 console.log("Error with fetching user info")

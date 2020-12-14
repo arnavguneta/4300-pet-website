@@ -63,32 +63,6 @@ if (m_token) {
                 approved
             }
 
-            if (approved) {
-                upetdata = {
-                    adopted: true
-                }
-                console.log('updating pet')
-                options = {
-                    method: 'PATCH',
-                    headers: {
-                        'Authorization': `Bearer ${m_token}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(upetdata)
-                }
-
-                update_data.petIDs.forEach(id => {
-                    fetch(`/api/pets/${id}`, options).then(r => {
-                        r.json().then(d => {
-                            console.log(d)
-                        })
-                        if (r.status == 400) {
-                            console.log("Error updating pets!")
-                        }
-                    })
-                })
-            }
-
             options = {
                 method: 'PATCH',
                 headers: {
@@ -104,22 +78,71 @@ if (m_token) {
                         pet_app.error.style.color = "red"
                         pet_app.error.innerHTML = "There are issues with your information!"
                     } else {
-                        pet_app.fname.readOnly = true
-                        pet_app.lname.readOnly = true
-                        pet_app.petIDs.readOnly = true
-                        pet_app.email.readOnly = true
-                        pet_app.number.area.readOnly = true
-                        pet_app.number.d.readOnly = true
-                        pet_app.address.street1.readOnly = true
-                        pet_app.address.street2.readOnly = true
-                        pet_app.address.city.readOnly = true
-                        pet_app.address.state.readOnly = true
-                        pet_app.address.zip.readOnly = true
-                        pet_app.reason.readOnly = true
-                        pet_app.submit.value = 'Edit'
-                        pet_app.error.style.color = "green"
-                        pet_app.error.innerHTML = "Form updated!"
-                        window.setTimeout(1000)
+                        if (approved) {
+                            options = {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': `Bearer ${m_token}`,
+                                    'Content-Type': 'application/json'
+                                }
+                            }
+                            fetch(`/api/pets/${update_data.petIDs[0]}`, options).then(res => {
+                                if (res.status != 404) {
+                                    res.json().then(fdata => {
+                                        if (fdata.adopted) {
+                                            pet_app.error.style.color = "red"
+                                            pet_app.error.innerHTML = "Pet has already been adopted."
+                                        } else {
+                                            upetdata = {
+                                                adopted: true,
+                                                petapps: [pet_id]
+                                            }
+                                            console.log('updating pet')
+                                            options = {
+                                                method: 'PATCH',
+                                                headers: {
+                                                    'Authorization': `Bearer ${m_token}`,
+                                                    'Content-Type': 'application/json'
+                                                },
+                                                body: JSON.stringify(upetdata)
+                                            }
+
+                                            update_data.petIDs.forEach(id => {
+                                                fetch(`/api/pets/${id}`, options).then(r => {
+                                                    r.json().then(d => {
+                                                        console.log(d)
+                                                    })
+                                                    if (r.status == 400) {
+                                                        console.log("Error updating pets!")
+                                                    } else {
+                                                        pet_app.fname.readOnly = true
+                                                        pet_app.lname.readOnly = true
+                                                        pet_app.petIDs.readOnly = true
+                                                        pet_app.email.readOnly = true
+                                                        pet_app.number.area.readOnly = true
+                                                        pet_app.number.d.readOnly = true
+                                                        pet_app.address.street1.readOnly = true
+                                                        pet_app.address.street2.readOnly = true
+                                                        pet_app.address.city.readOnly = true
+                                                        pet_app.address.state.readOnly = true
+                                                        pet_app.address.zip.readOnly = true
+                                                        pet_app.reason.readOnly = true
+                                                        pet_app.submit.value = 'Edit'
+                                                        pet_app.error.style.color = "green"
+                                                        pet_app.error.innerHTML = "Form updated!"
+                                                        window.setTimeout(1000)
+                                                    }
+                                                })
+                                            })
+                                        }
+                                    })
+                                } else {
+                                    pet_app.error.style.color = "red"
+                                    pet_app.error.innerHTML = "Pet ID not found."
+                                }
+                            })
+
+                        }
                     }
                 })
             })

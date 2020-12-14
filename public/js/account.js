@@ -89,7 +89,7 @@ if (account_token) {
                     }
 
                     fetch(`/api/petapps/${account.petapp}`, options).then(response => {
-                        if (response.status != 404 || response.status != 500) {
+                        if (response.status != 404 && response.status != 500) {
                             response.json().then(data => {
                                 const data_name = data.name.split(" ")
                                 petapp.fname.value = data_name[0]

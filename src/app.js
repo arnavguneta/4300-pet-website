@@ -185,6 +185,8 @@ app.post('/api/users/:id', auth, async (req, res) => {
 
 app.patch('/api/users/:id', auth, async (req, res) => {
     const _id = req.params.id
+    if (!req.user.id !== _id && !req.user.isAdmin) return res.status(400).send('Not sufficient permissions')
+
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'email', 'password', 'age', 'petapp']
     const isValidOperation = updates.every(update => allowedUpdates.includes(update))
@@ -204,6 +206,7 @@ app.patch('/api/users/:id', auth, async (req, res) => {
 
 app.delete('/api/users/:id', auth, async (req, res) => {
     const _id = req.params.id
+    if (!req.user.id !== _id && !req.user.isAdmin) return res.status(400).send('Not sufficient permissions')
 
     try {
         const user = await User.findByIdAndDelete(_id)
@@ -236,6 +239,7 @@ app.post('/api/petapps/:id', auth, async (req, res) => {
 })
 
 app.get('/api/petapps/all', async (req, res) => {
+    
     try {
         const papps = await PetApp.find({})
         console.log({papps})
@@ -248,6 +252,7 @@ app.get('/api/petapps/all', async (req, res) => {
 
 app.patch('/api/petapps/:id', auth, async (req, res) => {
     const _id = req.params.id
+    if (!req.user.id !== _id && !req.user.isAdmin) return res.status(400).send('Not sufficient permissions')
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'email', 'petIDs', 'number', 'address', 'reason', 'approved']
     const isValidOperation = updates.every(update => allowedUpdates.includes(update))
@@ -266,9 +271,8 @@ app.patch('/api/petapps/:id', auth, async (req, res) => {
 })
 
 app.delete('/api/petapps/:id', auth, async (req, res) => {
-    if (!req.user.isAdmin) return res.status(400).send('Not sufficient permissions')
-
     const _id = req.params.id
+    if (!req.user.id !== _id && !req.user.isAdmin) return res.status(400).send('Not sufficient permissions')
 
     try {
         const petapp = await PetApp.findByIdAndDelete(_id)
