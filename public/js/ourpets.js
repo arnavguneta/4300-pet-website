@@ -4,7 +4,7 @@ const pets = {
 		p: document.getElementsByClassName('alt-nopets')[0],
 }
 
-fetch('/api/pets/all').then(response => {
+fetch('/projects/pet-web/api/pets/all').then(response => {
     response.json().then(data => {
         console.log(data)
 				if (data.length === 0) return;

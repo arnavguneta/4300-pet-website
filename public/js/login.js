@@ -9,7 +9,7 @@ const logout = () => {
             'Content-Type': 'application/json'
         }
     }
-    fetch(`/api/users/logallout`, options).then(response => {
+    fetch(`/projects/pet-web/api/users/logallout`, options).then(response => {
         if (response.status != 500) {
             sessionStorage.removeItem('token')
             window.location.href = "https://arnav.guneta.com/projects/pet-web"
@@ -57,7 +57,7 @@ if (login_token) {
             },
             body: JSON.stringify(reqdata)
         }
-        fetch('/api/users/login', options).then((response) => {
+        fetch('/projects/pet-web/api/users/login', options).then((response) => {
             if (response.status == 400) {
                 login.error.innerHTML = "Either incorrect email or password!"
             } else {

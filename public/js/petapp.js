@@ -23,7 +23,7 @@ const petapp_token = sessionStorage.getItem('token')
 let update_pet = false
 
 if (!petapp_token) {
-    window.location.href = "http://localhost:3000/login"
+    window.location.href = "https://arnav.guneta.com/projects/pet-web/login"
     alert("You need to be logged in to access that page")
 } else {
     let options = {
@@ -38,7 +38,7 @@ if (!petapp_token) {
         e.preventDefault()
 
         // get user id
-        fetch(`/api/users/me`, options).then(response => {
+        fetch(`/projects/pet-web/api/users/me`, options).then(response => {
             if (response.status != 401) {
                 response.json().then(data => {
                     let formData = {
@@ -52,7 +52,7 @@ if (!petapp_token) {
                     }
 
                     formData.petIDs.forEach(pid => {
-                        fetch(`/api/pets/${pid}`, options).then(r => {
+                        fetch(`/projects/pet-web/api/pets/${pid}`, options).then(r => {
                             if (r.status == 404 || r.status == 500) {
                                 petapp.error.style.color = 'red'
                                 petapp.error.innerHTML = `Pet with ID: ${pid} doesn't exist`
@@ -71,7 +71,7 @@ if (!petapp_token) {
                                             },
                                             body: JSON.stringify(formData)
                                         }
-                                        fetch(`/api/petapps/create`, options).then(response2 => {
+                                        fetch(`/projects/pet-web/api/petapps/create`, options).then(response2 => {
                                             if (response2.status != 400) {
                                                 // add petapp id to user
                                                 response2.json().then(rdata => {
@@ -86,7 +86,7 @@ if (!petapp_token) {
                                                         },
                                                         body: JSON.stringify(formData)
                                                     }
-                                                    fetch(`/api/users/${data._id}`, options).then(response3 => {
+                                                    fetch(`/projects/pet-web/api/users/${data._id}`, options).then(response3 => {
                                                         response3.json().then(udata => {
                                                             console.log(udata)
                                                         })

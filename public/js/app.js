@@ -9,7 +9,7 @@ if (token) {
             'Content-Type': 'application/json'
         }
     }
-    fetch(`/api/users/update`, options).then(response => {
+    fetch(`/projects/pet-web/api/users/update`, options).then(response => {
         console.log(response)
         response.json().then(data => {
             logintext.innerHTML = `Welcome, <a id="account" href="/account"><b>${data.name}</b></a>!`

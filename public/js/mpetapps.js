@@ -71,7 +71,7 @@ if (m_token) {
                 },
                 body: JSON.stringify(update_data)
             }
-            fetch(`/api/petapps/${pet_id}`, options).then((uresponse) => {
+            fetch(`/projects/pet-web/api/petapps/${pet_id}`, options).then((uresponse) => {
                 uresponse.json().then(udata => {
                     console.log(udata)
                     if (uresponse.status == 400) {
@@ -86,7 +86,7 @@ if (m_token) {
                                     'Content-Type': 'application/json'
                                 }
                             }
-                            fetch(`/api/pets/${update_data.petIDs[0]}`, options).then(res => {
+                            fetch(`/projects/pet-web/api/pets/${update_data.petIDs[0]}`, options).then(res => {
                                 if (res.status != 404) {
                                     res.json().then(fdata => {
                                         if (fdata.adopted) {
@@ -108,7 +108,7 @@ if (m_token) {
                                             }
 
                                             update_data.petIDs.forEach(id => {
-                                                fetch(`/api/pets/${id}`, options).then(r => {
+                                                fetch(`/projects/pet-web/api/pets/${id}`, options).then(r => {
                                                     r.json().then(d => {
                                                         console.log(d)
                                                     })
@@ -157,7 +157,7 @@ if (m_token) {
         }
     }
 
-    fetch(`/api/users/me`, options).then(response => {
+    fetch(`/projects/pet-web/api/users/me`, options).then(response => {
         if (response.status != 401) {
             response.json().then(data => {
                 if (!data.isAdmin) {
@@ -165,7 +165,7 @@ if (m_token) {
                     alert('Insufficient perms')
                 }
             })
-            fetch(`/api/petapps/all`).then(allresponse => {
+            fetch(`/projects/pet-web/api/petapps/all`).then(allresponse => {
                 allresponse.json().then(alldata => {
                     db = alldata
                     alldata.forEach(petapp => {

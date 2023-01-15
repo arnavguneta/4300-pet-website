@@ -44,7 +44,7 @@ if (mpet_token) {
                 },
                 body: JSON.stringify(update_data)
             }
-            fetch(`/api/pets/${pet_app.petID}`, options).then((uresponse) => {
+            fetch(`/projects/pet-web/api/pets/${pet_app.petID}`, options).then((uresponse) => {
                 uresponse.json().then(udata => {
                     console.log(udata)
                     if (uresponse.status == 400) {
@@ -75,7 +75,7 @@ if (mpet_token) {
         }
     }
 
-    fetch(`/api/users/me`, options).then(response => {
+    fetch(`/projects/pet-web/api/users/me`, options).then(response => {
         if (response.status != 401) {
             response.json().then(data => {
                 if (!data.isAdmin) {
@@ -83,7 +83,7 @@ if (mpet_token) {
                     alert('Insufficient perms')
                 }
             })
-            fetch(`/api/pets/all`).then(allresponse => {
+            fetch(`/projects/pet-web/api/pets/all`).then(allresponse => {
                 allresponse.json().then(alldata => {
                     db = alldata
                     alldata.forEach(petapp => {

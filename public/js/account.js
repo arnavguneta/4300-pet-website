@@ -65,7 +65,7 @@ const reqadmin = () => {
             'Content-Type': 'application/json'
         }
     }
-    fetch(`/api/users/reqadmin`, options).then(response => {
+    fetch(`/projects/pet-web/api/users/reqadmin`, options).then(response => {
         if (response.ok) {
             account.reqadminstatus.style.color = "green"
             account.reqadminstatus.innerHTML = 'Your request for admin access has been submitted'
@@ -88,7 +88,7 @@ if (account_token) {
     const edit_acc = document.getElementById('editacc')
     
 
-    fetch(`/api/users/me`, options).then(response => {
+    fetch(`/projects/pet-web/api/users/me`, options).then(response => {
         if (response.status != 401) {
             response.json().then(data => {
                 console.log(data)
@@ -112,7 +112,7 @@ if (account_token) {
                         }
                     }
 
-                    fetch(`/api/petapps/${account.petapp}`, options).then(response => {
+                    fetch(`/projects/pet-web/api/petapps/${account.petapp}`, options).then(response => {
                         if (response.status != 404 && response.status != 500) {
                             response.json().then(data => {
                                 const data_name = data.name.split(" ")
@@ -178,7 +178,7 @@ if (account_token) {
                 },
                 body: JSON.stringify(update_data)
             }
-            fetch(`/api/petapps/${account.petapp}`, options).then((uresponse) => {
+            fetch(`/projects/pet-web/api/petapps/${account.petapp}`, options).then((uresponse) => {
                 uresponse.json().then(udata => {
                     console.log(udata)
                     if (uresponse.status == 400) {
@@ -236,7 +236,7 @@ if (account_token) {
             }
 
             const id = account.id
-            fetch(`/api/users/${id}`, options).then((uresponse) => {
+            fetch(`/projects/pet-web/api/users/${id}`, options).then((uresponse) => {
                 uresponse.json().then(udata => {
                     if (uresponse.status == 400) {
                         account.error.style.color = "red"

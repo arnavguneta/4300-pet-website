@@ -9,7 +9,7 @@ const logout = () => {
             'Content-Type': 'application/json'
         }
     }
-    fetch(`/api/users/logallout`, options).then(response => {
+    fetch(`/projects/pet-web/api/users/logallout`, options).then(response => {
         if (response.status != 500) {
             sessionStorage.removeItem('token')
             window.location.href = "https://arnav.guneta.com/projects/pet-web"
@@ -61,7 +61,7 @@ if (signup_token) {
             },
             body: JSON.stringify(signup_data)
         }
-        fetch('/api/users/signup', options).then((response) => {
+        fetch('/projects/pet-web/api/users/signup', options).then((response) => {
             response.json().then(data => {
                 console.log(data)
                 if (response.status == 400) {

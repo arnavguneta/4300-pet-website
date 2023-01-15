@@ -40,7 +40,7 @@ if (cpet_token) {
             },
             body: JSON.stringify(data)
         }
-        fetch(`/api/pets/create`, options).then(response => {
+        fetch(`/projects/pet-web/api/pets/create`, options).then(response => {
             response.json().then(d => {
                 console.log(d)
             })
