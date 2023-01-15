@@ -99,7 +99,7 @@ if (account_token) {
                 account.email.value = data.email
                 account.password.value = data.password
 
-                // if (data.isAdmin) account.reqadmin.innerHTML = ''
+                if (data.isAdmin) account.reqadmin.innerHTML = ''
                 if (!data.isAdmin) admin.sect.innerHTML = ''
                 if (account.petapp == 0) {
                     petapp.form.innerHTML = ""
