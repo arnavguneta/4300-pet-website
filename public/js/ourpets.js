@@ -1,13 +1,15 @@
 
 const pets = {
-    table: document.getElementsByClassName('ourpets')[0]
+    table: document.getElementsByClassName('ourpets')[0],
+		p: document.getElementsByClassName('alt-nopets')[0],
 }
-
-pets.table.innerHTML = ''
 
 fetch('/api/pets/all').then(response => {
     response.json().then(data => {
         console.log(data)
+				if (data.length === 0) return;
+				pets.table.innerHTML = ''
+				pets.p.innerHTML = ''
         data.forEach(p => {
             pets.table.innerHTML +=
                 `

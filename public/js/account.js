@@ -6,7 +6,9 @@ const account = {
     email: document.getElementById('accountemail'),
     password: document.getElementById('accountpass'),
     form: document.getElementById('loginForm'),
-    error: document.getElementById('loginerror')
+    error: document.getElementById('loginerror'),
+    reqadmin: document.getElementById('reqadmin'),
+    reqadminstatus: document.getElementById('reqadminstatus')
 }
 
 const petapp = {
@@ -44,26 +46,47 @@ const acc_main = document.querySelector('main')
 const account_token = sessionStorage.getItem('token')
 
 const login = () => {
-    window.location.href = "http://localhost:3000/login"
+    window.location.href = "https://arnav.guneta.com/projects/pet-web/login"
 }
 
 const home = () => {
-    window.location.href = "http://localhost:3000"
+    window.location.href = "https://arnav.guneta.com/projects/pet-web"
 }
 
 const manualLogOut = () => {
-    window.location.href = "http://localhost:3000/login"
+    window.location.href = "https://arnav.guneta.com/projects/pet-web/login"
 }
 
-if (account_token) {
-    const edit_acc = document.getElementById('editacc')
+const reqadmin = () => {
     let options = {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Authorization': `Bearer ${account_token}`,
             'Content-Type': 'application/json'
         }
     }
+    fetch(`/api/users/reqadmin`, options).then(response => {
+        if (response.ok) {
+            account.reqadminstatus.style.color = "green"
+            account.reqadminstatus.innerHTML = 'Your request for admin access has been submitted'
+        } else {
+            account.reqadminstatus.style.color = "red"
+            account.reqadminstatus.innerHTML = 'Something went wrong'
+        }
+    })
+}
+
+let options = {
+    method: 'POST',
+    headers: {
+        'Authorization': `Bearer ${account_token}`,
+        'Content-Type': 'application/json'
+    }
+}
+
+if (account_token) {
+    const edit_acc = document.getElementById('editacc')
+    
 
     fetch(`/api/users/me`, options).then(response => {
         if (response.status != 401) {
@@ -76,6 +99,7 @@ if (account_token) {
                 account.email.value = data.email
                 account.password.value = data.password
 
+                // if (data.isAdmin) account.reqadmin.innerHTML = ''
                 if (!data.isAdmin) admin.sect.innerHTML = ''
                 if (account.petapp == 0) {
                     petapp.form.innerHTML = ""

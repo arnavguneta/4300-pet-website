@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/css/normalize.css">
 </head>
 <div id="everything">
-
     <body>
         {{>header}}
         <div id="options">
@@ -64,6 +63,11 @@
             </form>
             <button onclick="manualLogOut()" id="logout">Logout</button>
             <br />
+            <div id="reqadmin">
+                <button id="reqadminbtn" onclick="reqadmin()">Request Admin</button>
+                <p>Request admin priviledges to view full app functionality</p>
+                <p id="reqadminstatus"></p>
+            </div>
             <form method="post" id="application">
                 <h1 id="loginheader">Pet Application</h1>
 

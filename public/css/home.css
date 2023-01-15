@@ -24,6 +24,7 @@ body {
   clear: both;
   margin-bottom: 2em;
 }
+
 #options ul {
   list-style-type: none;
   text-align: center;
@@ -32,30 +33,37 @@ body {
   width: 105.27%;
   position: relative;
 }
+
 #options ul li {
   float: left;
   width: 19%;
   margin-bottom: 0.5em;
   background-color: #6c7c59;
 }
-#options ul li:hover > ul {
+
+#options ul li:hover>ul {
   display: block;
 }
+
 #options ul ul {
   display: none;
   font-size: 10%;
   position: absolute;
   top: 100%;
 }
+
 #options ul ul li {
   float: none;
 }
+
 #options ul li a.current {
   color: black;
 }
+
 #options ul li a.last {
   border-right: none;
 }
+
 #options ul li a {
   display: block;
   padding: 0.5em 1em 0.5em 1.5em;
@@ -63,12 +71,14 @@ body {
   font-weight: bold;
   color: white;
 }
+
 #involvement ul li {
   margin: 0em;
   width: 18.05%;
   height: 100%;
   font-size: 19px;
 }
+
 #pets ul li {
   text-align: center;
   margin: 0em;
@@ -76,9 +86,11 @@ body {
   height: 100%;
   font-size: 19px;
 }
+
 #involvement ul li:hover {
   background-color: #6c7c59;
 }
+
 #pets ul li:hover {
   background-color: #6c7c59;
 }
@@ -101,11 +113,13 @@ header h1 {
 header h2 {
   text-align: center;
 }
+
 header h4 {
   text-align: right;
   margin: 0em;
   padding-right: 1em;
 }
+
 .logsignup {
   color: black;
   text-decoration: none;
@@ -119,6 +133,7 @@ header h4 {
 #title {
   width: 100%;
 }
+
 #ourpets {
   width: 50%;
 }
@@ -128,16 +143,20 @@ main {
   margin-top: 2em;
   margin-bottom: 1em;
 }
+
 main h1.top {
   font-size: 160%;
 }
+
 main h1.tabs {
   font-size: 140%;
 }
+
 main {
   line-height: 15px;
   font-size: 80%;
 }
+
 main div {
   width: 75%;
   margin-left: 9em;
@@ -193,7 +212,9 @@ footer {
 #editacc,
 #submitApp,
 #mpets,
-#musers, #cpets {
+#musers,
+#cpets,
+#reqadminbtn {
   clear: both;
   float: left;
   font-size: 110%;
@@ -210,7 +231,9 @@ footer {
 #editacc:hover,
 #submitApp:hover,
 #mpets:hover,
-#musers:hover, #getAddr:hover, #cpets:hover {
+#musers:hover,
+#getAddr:hover,
+#cpets:hover {
   background-color: rgb(179, 176, 176);
 }
 
@@ -248,7 +271,8 @@ footer {
 #pcity,
 #pstate,
 #pzip,
-#why, .field {
+#why,
+.field {
   margin-bottom: 0.5em;
   margin-left: 0.4em;
   margin-right: 0.4em;
@@ -266,6 +290,7 @@ footer {
 #application #why {
   width: 400px;
 }
+
 /* #application #submitApp {
   font-size: 110%;
   border: 1px solid black;
@@ -288,6 +313,7 @@ footer {
 #resources {
   margin-bottom: 2em;
 }
+
 #resources h2 {
   margin-top: 3em;
   font-size: 200%;
@@ -377,11 +403,13 @@ footer {
   margin-top: 10px;
   color: red;
 }
+
 #admin {
   float: left;
 }
 
-#apps, #slctpets {
+#apps,
+#slctpets {
   float: left;
   padding: 7px;
   margin-top: 2em;
@@ -401,43 +429,54 @@ footer {
   width: 75px;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
+
 .admin-link {
   text-decoration: none;
   color: black;
 }
 
 
-#map { 
-	margin:auto;
-	margin-top:150px;
-	width: 600px; 
-	height: 400px; 
-	background-color: grey; 
-	margin-bottom:20px;
-  } 
-  
-  #zip {
-	margin-bottom:3em;
-  }
-  
-  #zip a {
-	text-decoration:none;
-	color:black;
-	padding:7px;
+#map {
+  margin: auto;
+  margin-top: 150px;
+  width: 600px;
+  height: 400px;
+  background-color: grey;
+  margin-bottom: 20px;
+}
+
+#zip {
+  margin-bottom: 3em;
+}
+
+#zip a {
+  text-decoration: none;
+  color: black;
+  padding: 7px;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  padding-top:-10px;
+  padding-top: -10px;
   border: 2px solid rgb(179, 176, 176);
 
-  }
-  
-  #zip input {
-	margin-top:-.25em;
-	height:25px;
-  }
+}
 
-  .aboutus {
-    font-size: 125%;
-    line-height: 125%;
-    padding-right: 16px;
-    padding-left: 16px;
-  }
+#zip input {
+  margin-top: -.25em;
+  height: 25px;
+}
+
+.aboutus {
+  font-size: 125%;
+  line-height: 125%;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+#reqadmin {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+#reqadmin p {
+  margin-left: 2rem;
+}

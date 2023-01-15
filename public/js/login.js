@@ -12,7 +12,7 @@ const logout = () => {
     fetch(`/api/users/logallout`, options).then(response => {
         if (response.status != 500) {
             sessionStorage.removeItem('token')
-            window.location.href = "http://localhost:3000"
+            window.location.href = "https://arnav.guneta.com/projects/pet-web"
         } else {
             console.log("Error with logging out")
         }
@@ -20,7 +20,7 @@ const logout = () => {
 }
 
 const home = () => {
-    window.location.href = "http://localhost:3000"
+    window.location.href = "https://arnav.guneta.com/projects/pet-web"
 }
 
 if (login_token) {
@@ -66,7 +66,7 @@ if (login_token) {
                     login.error.innerHTML = "Success!"
                     window.setTimeout(1000)
                     sessionStorage.setItem('token', data.token)
-                    window.location.href = "http://localhost:3000"
+                    window.location.href = "https://arnav.guneta.com/projects/pet-web"
                 })
             }
         })

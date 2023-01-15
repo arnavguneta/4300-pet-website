@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const jwt = require('jsonwebtoken')
+const fetch = require('node-fetch')
 const auth = require('./middleware/auth')
 const { User } = require('./models/user')
 const { PetApp } = require('./models/petapp')
@@ -115,7 +116,7 @@ app.get('/admin/petapps', (req, res) => {
 app.post('/api/users/update', async (req, res) => {
     try {
         const token = req.header('Authorization').replace('Bearer ', '')
-        const decoded = jwt.verify(token, 'thisisasecretvalue')
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token })
         if (!user) throw new Error()
         res.send({ name: user.name });
@@ -168,6 +169,15 @@ app.post('/api/users/logallout', auth, async (req, res) => {
 app.post('/api/users/me', auth, async (req, res) => {
     // auth self check
     res.send(req.user)
+})
+
+app.get('/api/users/reqadmin', auth, async (req, res) => {
+    if (req.user.isAdmin) return res.status(200).send()
+    fetch(process.env.WEBHOOK, {method: 'POST', body: JSON.stringify({
+        username: "arnav.guneta.com/pets-web",
+        content: `${req.user.name} has request admin access\nID: ${req.user._id}`,
+        avatar_url: "https://i.imgur.com/9mszcmY.jpg"
+    }), headers: { 'Content-Type': 'application/json' }}).then(hookRes => res.status(hookRes.status).send())
 })
 
 app.post('/api/users/:id', auth, async (req, res) => {

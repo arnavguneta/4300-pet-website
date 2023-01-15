@@ -79,7 +79,7 @@ if (mpet_token) {
         if (response.status != 401) {
             response.json().then(data => {
                 if (!data.isAdmin) {
-                    window.location.href = 'http://localhost:3000/'
+                    window.location.href = 'https://arnav.guneta.com/projects/pet-web/'
                     alert('Insufficient perms')
                 }
             })
