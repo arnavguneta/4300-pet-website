@@ -12,7 +12,7 @@ if (token) {
     fetch(`/projects/pet-web/api/users/update`, options).then(response => {
         console.log(response)
         response.json().then(data => {
-            logintext.innerHTML = `Welcome, <a id="account" href="/account"><b>${data.name}</b></a>!`
+            logintext.innerHTML = `Welcome, <a id="account" href="/projects/pet-web/account"><b>${data.name}</b></a>!`
         })
 
     })

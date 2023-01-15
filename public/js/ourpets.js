@@ -14,7 +14,7 @@ fetch('/projects/pet-web/api/pets/all').then(response => {
             pets.table.innerHTML +=
                 `
                 <tr>
-		            <td><img src="${p.image}" height="250"></td>
+		            <td><img src="/projects/pet-web${p.image}" height="250"></td>
 		            <td class="petinfo">
 			            Name: ${p.name}<br>
 			            <br>
